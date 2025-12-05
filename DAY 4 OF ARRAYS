@@ -1,1 +1,29 @@
 
+Que 6. Write a program to take an array and traverse it from
+half to start.
+Input: arr = {1, 2, 3, 4, 5, 6}
+Output: 3 2 1
+public static void q6()
+	{
+		int arr[] = {1,2,3,4,5,6};
+		
+		for(int i=arr.length/2-1 ; i>=0 ; i--)
+		{
+			System.out.print(arr[i]);
+		}
+	}
+
+Que 7. Write a program to take an array and traverse it from
+half to end.
+Input: arr = {1, 2, 3, 4, 5, 6}
+Output: 4 5 6
+
+
+public static void q7()
+	{
+		int []arr = {1,2,3,4,5,6};
+		for(int i=arr.length/2 ; i<arr.length ; i++)
+		{
+			System.out.print(arr[i]+ " ");
+		}
+	}
