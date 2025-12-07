@@ -1,1 +1,44 @@
+Que 10. Write a program to print span of an array.
+Input: arr = {5, 7, 3, 9, 4}
+Output: maximum element: 9, minimum element: 3
+span = 9-3 = 6
+
+public static int q8(int[] arr)
+	{
+		int min = Integer.MAX_VALUE;
+		for(int i=0 ; i<arr.length ; i++)
+		{
+			if(arr[i]<min)
+			{
+				min =arr[i];
+			}
+		}
+		
+		return min;
+		
+	}
+	
+	public static int q9(int []arr)
+	{
+		int max = Integer.MIN_VALUE;
+		for(int i :arr)
+		{
+			if(i>max)
+			{
+				max= i;
+			}
+		}
+		return max;
+	}
+	
+	public static void q10(int[]num)
+	{
+		int minimum = q8(num);
+		int maximum = q9(num);
+		
+		int span = maximum - minimum;
+		System.out.println(span);
+	}
+
+
 
