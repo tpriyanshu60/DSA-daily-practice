@@ -1,1 +1,66 @@
+Que 13. Write a program to create a new array containing only the
+even elements of a given array. The program should:
+1. Take an input array of integers.
+2. Create a new array to store only the even elements from
+the input array.
+3. Return the new array and display its contents.
+Input: arr = {14, 9, 6, 20, 35}
+Output: evenArr = {14, 6, 20}
 
+
+public static int[] q13(int[]arr)
+	{
+		int count=0;
+		for(int i : arr)
+		{
+			if(i%2==0)
+			{
+				count++;
+			}
+		}
+		int newArray[]= new int[count];
+		int index=0;
+		for(int i : arr)
+		{
+			if(i%2==0)
+			{
+				newArray[index]= i;
+				index++;
+			}
+		}
+		return newArray;
+	}
+
+
+Que 14. Write a program to create a new array containing
+only the odd elements of a given array. The program should:
+1. Take an input array of integers.
+2. Create a new array to store only the odd elements from
+the input array.
+3. Return the new array and display its contents.
+Input: arr = {14, 9, 6, 20, 35}
+Output: oddArr = {9, 35}
+
+
+	public static int[] q14(int[]arr)
+	{
+		int k=0;
+		for(int i: arr)
+		{
+			if(i%2!=0)
+			{
+				k++;
+			}
+		}
+		int index = 0;
+		int odd[] = new int [k];
+		for(int i : arr)
+		{
+			if(i%2!=0)
+			{
+				odd[index] = i;
+				index++;
+			}
+		}
+		return odd;
+	}
