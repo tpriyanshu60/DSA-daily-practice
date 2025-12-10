@@ -1,0 +1,41 @@
+Que 15. Write a program to print Sum of only even elements
+of an array.
+Input : arr = {1, 2, 3, 4, 5}
+Output: sum = 6
+
+
+public static void q15(int[]arr)
+	{
+		int sum = 0;
+		for(int i : arr )
+		{
+			if(i%2==0)
+			{
+				sum = sum+i;
+			}
+		}
+		System.out.println(sum);
+	}
+
+
+
+
+Que 16. Write a program to print Sum of only odd elements
+of an array.
+Input : arr = {1, 2, 3, 4, 5}
+Output: sum = 9
+
+public static void q16(int[]arr)
+	{
+		int sum = 0;
+		for(int i : arr )
+		{
+			if(i%2!=0)
+			{
+				sum = sum+i;
+			}
+		}
+		System.out.println(sum);
+
+	}
+	
