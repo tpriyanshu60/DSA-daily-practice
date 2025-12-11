@@ -1,1 +1,38 @@
+Que 17. Write a program to print product of only even
+elements of an array.
+Input : arr = {1, 2, 3, 4, 5}
+Output: product = 8
 
+
+public static void q17(int[]arr)
+	{
+		int product = 1;
+		for(int i: arr)
+		{
+			if(i%2==0)
+			{
+				product = product*i;
+				
+			}
+		}
+		System.out.println(product);
+	}
+
+Que 18. Write a program to print product of only odd
+elements of an array.
+Input : arr = {1, 2, 3, 4, 5}
+Output: product = 15
+
+
+public static void q18(int[]arr)
+	{
+		int product =1;
+		for(int i:arr)
+		{
+			if(i%2!=0)
+			{
+				product = product*i;
+			}
+		}
+		System.out.println(product);
+	}
