@@ -1,0 +1,66 @@
+Que 19. Write a program to count the number of even and
+odd elements in an array.
+Input: arr = {1, 2, 3, 4, 5}
+Output: even=2, odd=3
+
+public static void q19(int[]arr)
+	{
+		int even =0;
+		int odd = 0;
+		for(int i : arr)
+		{
+			if(i%2==0)
+			{
+				even++;
+			}
+			else 
+			{
+				odd++;
+			}
+		}
+		System.out.println(even);
+		System.out.println(odd);
+	}
+
+
+
+Que 20. Write a program to find the Square and Cube of all
+elements of an array and store the results in two separate
+arrays. Return the new arrays.
+Input: arr = {1, 2, 3, 4, 5}
+Output: Square = {1, 4, 9, 16, 25}
+Cube = {1, 8, 27, 64, 125}
+
+
+
+	public static int[] square(int[]arr)
+	{
+		int square[] = new int[arr.length];
+		int index =0;
+		for(int i : arr)
+		{
+			square[index] = i*i;
+			index++;
+		}
+		return square;
+	}
+	public static int[] cube(int[]arr)
+	{
+		int cube[] = new int [arr.length];
+		int index =0;
+		for(int i : arr)
+		{
+			cube[index] = i*i*i;
+			index++;
+		}
+		return cube;
+	}
+	
+	public static void q20(int[]arr)
+	{
+		int[] square = square(arr);
+		int []cube = cube(arr);
+		System.out.println(Arrays.toString(square));
+		System.out.println(Arrays.toString(cube));
+	}
+	
