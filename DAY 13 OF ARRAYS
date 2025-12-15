@@ -1,0 +1,74 @@
+Que 21. Write a program to find the Square Root and Cube
+Root of all elements of an array and store the results in two
+separate arrays. Return the new arrays.
+Input: arr1 = {1, 4, 9, 16, 25}
+Output: sqrt = {1, 2, 3, 4, 5}
+
+	public static int[] squareRoot(int[]arr1)
+	{
+		int sqrt[] = new int[arr1.length];
+		int index =0;
+		for(int i : arr1)
+		{
+			sqrt[index] = (int)Math.sqrt(i);
+			index++;
+		}
+		return sqrt;
+	}
+	public static int[] cubeRoot(int[]arr2) 
+	{
+		int cbrt[] = new int[arr2.length];
+
+		int  index1=0;
+		for(int i : arr2)
+		{
+			cbrt[index1] = (int)Math.cbrt(i);
+			index1++;
+		}
+		return cbrt;
+	}
+	
+	public static void q21(int[]arr1 , int[]arr2)
+	{
+		int[] sqrt = squareRoot(arr1);
+		int[] cbrt = cubeRoot(arr2);
+		System.out.println(Arrays.toString(sqrt));
+		System.out.println(Arrays.toString(cbrt));
+		
+		
+	}
+
+
+
+
+Que 22. Write a program to store only two digit elements of
+an array in new array. Return the new Array.
+Input: arr = {1, 22, 309, 4, 55}
+Output: arr = {22, 55}
+
+
+
+
+public static int[] q22(int[]arr)
+	{
+		int k =0;
+		for(int i : arr)
+		{
+			if(i>9 && i<100)
+			{
+				k++;
+			}
+		}
+		int newArr[] = new int[k];
+		int index=0;
+		for(int i : arr)
+		{
+			if(i>9 && i<100)
+			{
+				newArr[index] = i;
+				index++;
+			}
+		}
+		return newArr;
+	}
+	
