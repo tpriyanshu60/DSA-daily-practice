@@ -1,0 +1,47 @@
+Que 25. Write a program to find whether the given element
+is present in an array or not.
+Input: arr = {11, 21, 31, 41, 51}
+num = 31
+Output: Yes
+
+public static void q25(int[]arr , int store)
+	{
+		int count =0;
+		for(int i : arr)
+		{
+			if(i==store)
+			{
+				System.out.println(i + " is present");
+				count++;
+				break;
+			}
+			
+		}
+		if(count==0)
+		{
+			System.out.println("it is not present");
+		}
+	}
+
+
+
+
+Que 26. Write a program to print the number of occurrence
+of a given element in an array.
+Input: arr = {1, 2, 3, 3, 6, 3, 5, 3}
+num = 3
+Output: 4 
+
+
+public static void q26(int []arr , int store)
+	{
+		int count=0;
+		for(int i : arr)
+		{
+			if(i==store)
+			{
+				count++;
+			}
+		}
+		System.out.println(count);
+	}
