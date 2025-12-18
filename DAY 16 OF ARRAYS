@@ -1,0 +1,52 @@
+Que 27. Write a program to print the number of occurrence
+of every element in an array.
+Input: arr = {1, 5, 2, 5, 2, 2, 1, 6}
+Output: Occurrence of 1 is 2
+Occurrence of 5 is 2
+Occurrence of 2 is 3
+Occurrence of 6 is 1
+
+
+public static void q27(int[] arr)
+	{
+	    boolean[] newArr = new boolean[arr.length];
+	    //arr = {1, 5, 2, 5, 2, 2, 1, 6}
+	    for (int i = 0; i < arr.length; i++) 
+	    {
+	        if (newArr[i]) 
+	        {
+	            continue; 
+	        }
+
+	        int count = 1;
+	        for (int j = i + 1; j < arr.length; j++) 
+	        {
+	            if (arr[i] == arr[j])
+	            {
+	                count++;
+	                newArr[j] = true; 
+	            }
+	        }
+
+	        System.out.println("Occurrence of " + arr[i] + " is " + count);
+	    }
+	}
+Que 28. Write a program to find and store the sum of
+elements of 2 arrays Index wise in a new array. Return the
+new array.(both the arrays should have equal number of
+elements)
+Input: arr1 = {10, 20, 30, 40}
+arr2 = {1, 2, 3, 4}
+Output: sum = {11, 22, 33, 44}
+
+public static int[] q28(int[]arr1 , int []arr2)
+	{
+		int []sum = new int[arr1.length];
+		int index=0;
+		for(int i : arr1)
+		{
+			sum[index] = i + arr2[index];
+			index++;
+		}
+		return sum;
+	}
