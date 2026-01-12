@@ -1,0 +1,189 @@
+package dsaRevesion;
+
+import java.util.Arrays;
+
+public class ArraySheet3 
+{
+	public static void q1()
+	{
+		int[]arr = {1,-10,20,-30,5};
+		int[] minpair = new int[2];
+		int[] maxpair = new int[2];
+		int maxproduct = 0;
+		int minproduct = 0;
+		for(int i=0 ; i<arr.length-1 ; i++)
+		{
+			for(int j=i+1 ; j<arr.length ; j++)
+			{
+				int product = arr[i]*arr[j];
+				
+				if(maxproduct<product)
+				{
+					maxproduct = product;
+					maxpair[0] = arr[i];
+					maxpair[1] = arr[j];
+				}
+				else if(minproduct>product)
+				{
+					minproduct = product;
+					minpair[0] = arr[i];
+					minpair[1] = arr[j];
+				}
+			}
+		}	
+		System.out.println("Maximum product : " + maxproduct+"("+"pair:  "+ maxpair[0] +" " + maxpair[1] + ")");
+		System.out.println("Minimum product : " + minproduct +"("+"pair: "+ minpair[0] +" " + minpair[1]+ ")");
+	}
+	
+	
+	public static void q3()
+	{
+		int[]arr = {15, -2, 2, -8, 1, 7, 10, 23};
+		int maxsubarray = 0;
+		for(int i=0  ;i<arr.length ; i++)
+		{
+			int sum= 0;
+			for(int j=i ; j<arr.length ; j++)
+			{
+				sum = sum + arr[j];
+				if(sum==0)
+				{
+					int subarray = j-i+1;
+					if(maxsubarray<subarray)
+					{
+						maxsubarray = subarray;
+					}
+				}
+			}
+		}
+		System.out.println(maxsubarray);
+	}
+	
+	
+	public static void q4()
+	{
+		int[]arr = {10,3,6,1,8,2};
+		
+		int maxdifference = 0;
+		for(int i=1 ; i<arr.length ;i++)
+		{
+			int difference = 0;
+			for(int j=i-1 ; j>=0 ; j--)
+			{
+				difference = arr[i] - arr[j];
+				if(maxdifference< difference)
+				{
+					maxdifference = difference;
+				}
+			}
+		}
+		System.out.println(maxdifference);
+	}
+	
+	public static boolean q5()
+	{
+		int[]arr = {1, 2, 3, 4, 5, 5};
+		int totalsum = 0;
+		for(int i=0 ; i<arr.length ; i++)
+		{
+			 totalsum = totalsum + arr[i];
+		}
+		if(totalsum%2==0)
+		{
+			int leftsum = 0;
+			for(int i=0 ; i<arr.length ; i++)
+			{
+				leftsum = leftsum + arr[i];
+				int rightsum = totalsum - leftsum;
+				if(leftsum==rightsum)
+				{
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	public static int repeated()
+	{
+		int[]arr = {1, 1, 3, 4, 5};
+		for(int i=0 ; i<arr.length ; i++)
+		{
+			for(int j=i+1 ; j<arr.length ; j++)
+			{
+				if(arr[i]==arr[j])
+				{
+					return arr[i];
+				}
+			}
+		}
+		return -1;
+	}
+	
+	public static int missingNumber()
+	{
+		int[]arr = {1, 1, 3, 4, 5};
+		int n = arr.length;
+		int sumOfNaturalNumber = n*(n+1)/2;
+		int sum = 0;
+		for(int i=0 ; i<arr.length ; i++)
+		{
+			sum = sum + arr[i];
+		}
+		return sumOfNaturalNumber - sum+ repeated();
+	}
+	
+	
+	public static void q7()
+	{
+		int[]arr = {1,2,3,4,5,6};
+		int []newArray = new int[3];
+		int index = 0;
+		for(int i=0 ; i<arr.length ; i++)
+		{
+			if(i%2!=0)
+			{
+				newArray[index++] = arr[i];
+			}
+		}
+		
+		int i=0;
+		int j =newArray.length-1;
+		
+		while(i<=j)
+		{
+			int temp = newArray[i];
+			newArray[i] = newArray[j];
+			newArray[j] = temp;
+			i++;
+			j--;
+		}
+		index = 0;
+		for(int k=1 ; k<arr.length; k=k+2)
+		{
+			arr[k] = newArray[index++];
+		}
+		System.out.println(Arrays.toString(arr));
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	public static void main(String[] args) 
+	{
+		//q1();
+		//q3();
+		//q4();
+		//System.out.println(q5());
+		//System.out.println(missingNumber());
+		q7();
+		
+	}
+
+}
