@@ -1,0 +1,492 @@
+package dsaRevesion;
+
+import java.util.Arrays;
+
+public class Array2DSheet1 
+{
+	public static void q1()
+	{
+		int[][]arr=
+			{{1,2,3},
+			{4,5,6},
+			{7,8,9}};
+		
+		for(int r=0 ; r<arr.length ; r++)
+		{
+			for(int c=0 ; c<arr[0].length ; c++)
+			{
+				System.out.print(arr[r][c]+" ");
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	public static void q2()
+	{
+		int[][]arr=
+			{{1,2,3},
+			{4,5,6},
+			{7,8,9}};
+		
+		for(int r=0 ; r<arr.length ; r++)
+		{
+			if(r==1)
+			{
+				continue;
+			}
+			for(int c=0 ; c<arr[0].length ; c++)
+			{
+				System.out.print(arr[r][c]+ " ");
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	public static void q3()
+	{
+		int[][]arr=
+			{{1,2,3},
+			{4,5,6},
+			{7,8,9}};
+		
+		for(int r=0 ; r<arr.length ; r++)
+		{
+			for(int c=0 ; c<arr[0].length ; c++)
+			{
+				if(c==1)
+				{
+					continue;
+				}
+				System.out.print(arr[r][c]+" ");
+			}
+			System.out.println();
+		}
+	}
+	
+	public static void q4()
+	{
+		int[][]arr=
+			{{1,2,3},
+			{4,5,6},
+			{7,8,9}};
+		
+		for(int r=0 ; r<arr.length ; r++) 
+		{
+			for(int c=0 ; c<arr[0].length ; c++)
+			{
+				if(r==c || r+c==arr.length-1)
+				{
+					System.out.print(arr[r][c]+" ");
+				}
+			}
+			System.out.println();
+		}	
+	}
+	
+	public static void q5()
+	{
+		int[][]arr=
+			{{1,2,3},
+			{4,5,6},
+			{7,8,9}};
+		
+		for(int r=0 ; r<arr.length ; r++)
+		{
+			for(int c=0 ; c<arr[0].length ; c++)
+			{
+				if(r>c)
+				{
+					System.out.print(arr[r][c]+" ");
+				}
+			}
+			System.out.println();
+		}	
+	}
+	
+	public static void q6()
+	{
+		int[][]arr=
+			{{1,2,3},
+			{4,5,6},
+			{7,8,9}};
+		
+		for(int r=0 ; r<arr.length ; r++)
+		{
+			for(int c=0 ; c<arr[0].length ; c++)
+			{
+				if(r<c)
+				{
+					System.out.print(arr[r][c]+" ");
+				}
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	public static void q7()
+	{
+		int[][]arr=
+			{{12, 5, 18},
+			{7, 16, 23},
+			{20, 30, 45}};
+		
+		for(int r=0 ; r<arr.length ; r++)
+		{
+			for(int c=0 ; c<arr[0].length ; c++)
+			{
+				if(arr[r][c]%2==0)
+				{
+					System.out.print(arr[r][c]+" ");
+				}
+			}
+		}	
+	}
+
+	
+	public static void q8()
+	{
+		int[][]arr=
+			{{1,2,3},
+			{4,5,6},
+			{7,8,9}};
+		
+		for(int r=0 ; r<arr.length ; r++)
+		{
+			for(int c=0 ; c<arr[0].length ; c++)
+			{
+				System.out.print(arr[r][c]*10+" ");
+			}
+			System.out.println();
+		}
+	}
+	
+	public static void q9()
+	{
+		int[][]arr=
+			{{5, -2, 3},
+			{-4, 7, -1},
+			{8, -9, 10}};
+		
+		for(int r=0 ;r<arr.length ; r++)
+		{
+			for(int c=0 ; c<arr[0].length ; c++)
+			{
+				if(arr[r][c]>0)
+				{
+					System.out.print(arr[r][c]+ " ");
+				}
+				else 
+				{
+					System.out.print((arr[r][c]=0)+" ");
+				}
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	public static void q10()
+	{
+		int[][] arr = 
+			{{15,25,35},
+			 {40,50,60},
+			 {70,80,90}};
+		
+		
+		for(int r=0 ; r<arr.length ; r++)
+		{
+			for(int c=0 ; c<arr[0].length ;c++)
+			{
+				if(r==0|| r==2)
+				{
+					int temp = arr[r][c];
+					arr[r][c] = arr[arr.length-1][c];
+					arr[arr.length-1][c] = temp;
+				}
+				System.out.print(arr[r][c]+" ");
+			}
+			System.out.println();
+		}
+	}
+	
+	public static void q11()
+	{
+		 int[][] arr = 
+			 {{15,25,35},
+			  {40,50,60},
+			  {70,80,90}};
+		 
+		 
+		 for(int r=0 ; r<arr.length ; r++)
+		 {
+			 for(int c=0 ; c<arr[0].length ; c++)
+			 {
+				 if(c==0 || c==2)
+				 {
+					 int temp = arr[r][c];
+					 arr[r][c] = arr[r][arr.length-1];
+					 arr[r][arr.length-1] = temp;
+				 }
+				 System.out.print(arr[r][c]+" ");
+			 }
+			 System.out.println();
+		 }
+	}
+	
+	public static void q12()
+	{
+		int[][] arr = 
+			 {{12, 5, 8},
+			 {22, 11, 18},
+		     {9, 25, 16}};
+		
+		
+		for(int r=0 ; r<arr.length ; r++)
+		{
+			Arrays.sort(arr[r]);
+			for(int c=0 ; c<arr[0].length ; c++)
+			{
+				System.out.print(arr[r][c]+" ");
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	public static void q13()
+	{
+		 int[][] arr = 
+			  {{12, 5, 8},
+			  {22, 11, 18},
+			  {9, 25, 16}};
+		 
+		 int[]temp = new int [arr.length];
+		 
+		 
+		 for(int c=0 ; c<arr[0].length ; c++)
+		 {
+			 int index=0;
+			 for(int r=0 ; r<arr.length ; r++)
+			 {
+				 temp[index++] = arr[r][c];
+			 }
+			 Arrays.sort(temp);
+			 
+			 index = 0;
+			 for(int r=0 ; r<arr.length ; r++)
+			 {
+				 arr[r][c] = temp[index++];
+			 }
+		 }
+		 
+		 for(int c=0 ; c<arr[0].length ; c++)
+		 {
+			 for(int r=0 ; r<arr.length ; r++)
+			 {
+				 System.out.print(arr[c][r]+" ");  
+			 }
+			 System.out.println();
+		 }	 
+	}
+	
+	public static void q14()
+	{
+		 int[][] arr =
+			 {{1, 2, 3},
+			  {4, 5, 6},
+			  {7, 8, 9}};
+		 
+		 int sum = 0;
+		 for(int r=0 ; r<arr.length ; r++)
+		 {
+			 for(int c=0 ; c<arr[0].length ; c++ )
+			 {
+				 if(r==c || r+c==arr.length-1)
+				 {
+					 sum = sum + arr[r][c];
+				 }
+			 }
+		 }
+		 System.out.println(sum);	 
+	}
+	
+	public static void q15()
+	{
+		 int[][] arr = 
+			 	{{1, 2, 3},
+				 {4, 5, 6},
+				 {7, 8, 9}};
+		 
+		 int []newArray = new int[1];
+		 int index = 0;
+		 for(int r=0 ; r<arr.length  ; r++)
+		 {
+			 int sum = 0;
+			 for(int c=0 ; c<arr[0].length ; c++) 
+			 {
+				 sum = sum + arr[r][c];
+			 }
+			 newArray[index] = sum;
+			 System.out.println(Arrays.toString(newArray));
+		 }	 
+	}
+	
+	
+	
+	public static void q16()
+	{
+	 int[][] arr = 
+		 		 {{1, 2, 3}, 
+				  {4, 5, 6}, 
+				  {7, 8, 9}};
+	 
+	 int []newArray = new int [1];
+	 int index = 0;
+	 for(int c=0 ; c<arr[0].length ; c++)
+	 {
+		 int sum =0;
+		 for(int r=0 ; r<arr.length ; r++)
+		 {
+			 sum = sum + arr[r][c];
+		 }
+		 newArray[index] = sum;
+		 System.out.println(Arrays.toString(newArray));
+	 }
+	 
+	}
+	
+	public static void q17()
+	{
+		int[][] arr =
+				{{34,12,56},
+				 {87,9,14},
+				 {42,73,5}};
+		
+		for(int r=0 ; r<arr.length  ; r++)
+		{
+			int min = Integer.MAX_VALUE; 
+			int columnIndex = 0;
+			for(int c=0 ; c<arr[0].length ; c++)
+			{
+				if(min>arr[r][c]) 
+				{
+					min = arr[r][c];
+					columnIndex = c;
+				}
+			}
+			System.out.print("min= "+ min + " " +"index= " + "(" + r + " " + columnIndex + ")");
+			System.out.println();
+		}
+	}
+	
+	
+	public static void q18()
+	{
+		int[][] arr = 
+				{{34, 12, 56},
+				 {87, 9, 14},
+				 {42, 73, 5}};
+		
+		for(int c=0 ; c<arr[0].length ; c++)
+		{
+			int max = Integer.MIN_VALUE;
+			for(int r=0 ; r<arr.length ; r++)
+			{
+				if(max<arr[r][c])
+				{
+					max = arr[r][c];
+				}
+			}
+			System.out.print("max= "+ max);
+			System.out.println();
+		}
+	}
+	
+	public static void q19()
+	{
+		 int[][] arr = 
+			 		{{34, 12, 56},
+			 		 {87, 9, 14},
+				     {42, 73, 5}};
+		 
+		 int min = Integer.MAX_VALUE;
+		 int max = Integer.MIN_VALUE;
+		 
+		 for(int r=0 ; r<arr.length ; r++)
+		 {
+			 for(int c=0 ; c<arr[0].length ; c++)
+			 {
+				 if(min>arr[r][c])
+				 {
+					 min = arr[r][c];
+				 }
+				 else if(max<arr[r][c])
+				 {
+					max = arr[r][c];
+				 }
+			 }
+		 }
+		 System.out.println(min);
+		 System.out.println(max);
+	}
+	
+	public static void q20()
+	{
+		 int[][] arr = 
+			 	{{15, 32, 9, 18},
+				 {40, 27, 56, 3},
+				 {8, 13, 22, 7},
+				 {41, 12, 17, 24} };
+		 
+		 int even = 0;
+		 int odd = 0;
+		for(int r=0 ; r<arr.length ; r++)
+		{
+			for(int c=0 ; c<arr[0].length ; c++)
+			{
+				if(arr[r][c]%2==0)
+				{
+					even++;
+				}
+				else
+				{
+					odd++;
+				}
+			}
+		}
+		System.out.println(even);
+		System.out.println(odd);
+	}
+	
+	
+	
+	
+	
+	public static void main(String[] args) 
+	{
+		//q1();
+		//q2();
+		//q3();
+		//q4();
+		//q5();
+		//q6();
+		//q7();
+		//q8();
+		//q9();
+		//q10();
+		//q11();
+		//q12();
+		//q13();
+		//q14();
+		//q15();
+		//q16();
+		//q17();
+		//q18();
+		//q19();
+		q20();
+	}
+
+}
