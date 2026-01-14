@@ -1,0 +1,320 @@
+package arraylist1;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Sheet1Practise 
+{
+	
+	public static void q1()
+	{
+		ArrayList<String> list = new ArrayList<>();
+		list.add("pink");
+		list.add("yellow");
+		list.add("white");
+		
+		System.out.println(list);	
+	}
+	
+	public static void q2()
+	{
+		ArrayList<String> list = new ArrayList<>();
+		list.add("pink");
+		list.add("yellow");
+		list.add("white");
+		
+		for(int i=0 ; i<list.size() ; i++)
+		{
+			System.out.println(list.get(i));
+		}
+	}
+	
+	public static void q3()
+	{
+		ArrayList<String> list = new ArrayList<>();
+		list.add("pink");
+		list.add("yellow");
+		list.add("white");
+		
+		for(String i : list)
+		{
+			System.out.println(i);
+		}
+	}
+	
+	public static void q4()
+	{
+		ArrayList<String> list = new ArrayList<>();
+		list.add("pink");
+		list.add("yellow");
+		list.add("white");
+		
+		System.out.println(list);
+		list.set(0,"red");
+		System.out.println(list);
+	}
+	
+	
+	public static void q5()
+	{
+		ArrayList<String> list = new ArrayList<>();
+		list.add("pink");
+		list.add("yellow");
+		list.add("white");
+		
+		System.out.println(list);
+		list.set(0,"red");
+		System.out.println(list.get(0));
+	}
+	
+	
+	public static void q6()
+	{
+		ArrayList<String>list = new ArrayList<String>();
+		list.add("pink");
+		list.add("yellow");
+		list.add("white");
+		
+		list.set(1, "green");
+		System.out.println(list);
+	}
+	
+	public static void q7()
+	{
+		ArrayList<String>list = new ArrayList<String>();
+		list.add("pink");
+		list.add("yellow");
+		list.add("white");
+		list.remove(0);
+		System.out.println(list);
+	}
+	
+	public static void q8()
+	{
+		ArrayList<String> list = new ArrayList<>();
+		list.add("pink");
+		list.add("yellow");
+		list.add("white");
+		
+		if(list.contains("red"))
+		{
+			System.out.println("list contains");
+		}
+		else 
+		{
+			System.out.println("list not contains");
+		}
+	}
+	
+	public static void q9()
+	{
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(48);
+		list.add(7);
+		list.add(4);
+		
+		
+		Collections.sort(list);
+		System.out.println(list);
+	}
+	
+	public static void q10()
+	{
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(48);
+		list.add(7);
+		list.add(4);
+		
+		
+		ArrayList<Integer> list1 = new ArrayList<>();
+		list1.add(0);
+		list1.add(0);
+	    list1.add(0);
+		Collections.copy(list1, list);
+		System.out.println(list1);
+	}
+	
+	public static void q11()
+	{
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(10);
+		list.add(20);
+		list.add(30);
+		list.add(40);
+		list.add(50);
+		
+		Collections.shuffle(list);
+		System.out.println(list);
+	}
+	
+	public static void q12()
+	{
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(10);
+		list.add(20);
+		list.add(30);
+		list.add(40);
+		list.add(50);
+		
+		Collections.reverse(list);
+		System.out.println(list);
+	}
+	
+	
+	public static void q13()
+	{
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(10);
+		list.add(20);
+		list.add(30);
+		list.add(40);
+		list.add(50);
+		
+		System.out.println(list.subList(0, 2));
+	}
+	
+	public static void q14()
+	{
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(48);
+		list.add(7);
+		list.add(4);
+		
+		
+		ArrayList<Integer> list1 = new ArrayList<>();
+		list1.add(48);
+		list1.add(7);
+	    list1.add(4);
+	    
+	   if( list.equals(list1))
+	   {
+		   System.out.println("both lists are equal");
+	   }
+	   else 
+	   {
+		   System.out.println("lists are not equal");
+	   }
+	}
+	
+	public static void q15()
+	{	
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(48);
+		list.add(7);
+		list.add(4);
+		
+		Collections.swap(list, 0, 2);
+		System.out.println(list);
+	}
+	
+	
+	public static void q16()
+	{
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(48);
+		list.add(7);
+		list.add(4);
+		ArrayList<Integer> list1 = new ArrayList<>();
+		list1.add(48);
+		list1.add(7);
+	    list1.add(4);
+	    
+	   list.addAll(list1);
+	   System.out.println(list);
+	}
+	
+	
+	public static void q17()
+	{
+		ArrayList<String> list = new ArrayList<>();
+		list.add("pink");
+		list.add("yellow");
+		list.add("white");
+		list.add("black");
+		list.add("red");
+		list.removeAll(list);
+		
+		System.out.println(list);
+	}
+	
+	
+	public static void q18()
+	{
+		ArrayList<String> list = new ArrayList<>();
+		list.add("pink");
+		list.add("yellow");
+		list.add("white");
+		
+		if(list.isEmpty())
+		{
+			System.out.println("list is empty");
+		}
+		else 
+		{
+			System.out.println("list is not empty");
+		}
+	}
+	
+	
+	public static void q19()
+	{
+		ArrayList<String> list = new ArrayList<>();
+		list.add("yellow");
+		list.add("white");
+		list.add("pink");
+		
+		list.trimToSize();
+		System.out.println(list);
+		list.add("pink");
+		System.out.println(list);
+
+	}
+	
+	public static void q20()	
+	{
+		ArrayList<String> list = new ArrayList<>(2);
+		list.add("yellow");
+		list.add("white");
+		list.add("pink");
+		
+		list.ensureCapacity(6);
+		
+		list.add("yellow");
+		list.add("white");
+		list.add("pink");
+		System.out.println(list);
+		list.add("yellow");
+		list.add("white");
+		list.add("pink");
+		System.out.println(list);
+
+		
+	}
+	
+	
+
+	public static void main(String[] args) 
+	{
+		//q1();
+		//q2();
+		//q3();
+		//q4();
+		//q5();
+		//q6();
+		//q7();
+		//q8();
+		//q9();
+		//q10();
+		//q11();
+		//q12();
+		//q13();
+		//q14();
+		//q15();
+		//q16();
+		//q17();
+		//q18();
+		//q19();
+		q20();
+		
+	}
+
+}
