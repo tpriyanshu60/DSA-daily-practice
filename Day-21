@@ -1,0 +1,117 @@
+package linkedList;
+
+public class InsertBeginning 
+{
+	static class Node
+	{
+		int data;
+		Node next = null;
+		public Node(int data)
+		{
+			this.data = data;
+			this.next = null;
+		}
+	}
+	Node head = null;
+	Node tail = null;
+	
+	
+	public void insertAtBegining(int data)
+	{
+		Node newNode = new Node(data);
+		if(head==null && tail==null)
+		{
+			head = tail = newNode;
+		}
+		else 
+		{
+			newNode.next = head;
+			head = newNode;
+		}
+	}
+	
+	
+	public void insertAtEnd(int data)
+	{
+		Node newNode = new Node(data);
+		if(head==null && tail==null)
+		{
+			head=tail= newNode;
+		}
+		else 
+		{
+			tail.next = newNode;
+			tail = newNode;
+		}
+		
+	}
+	
+	public void print()
+	{
+		Node temp = head;
+		while(temp!=null)
+		{
+			System.out.print(temp.data + " -> ");
+			temp = temp.next;
+		}
+		System.out.print("null");
+		
+	}
+	
+
+	public void searchData(int data)
+	{
+		Node search = head;
+		while(search!=null)
+		{
+			if(search.data==data)
+			{
+				System.out.println("found");
+				return;
+			}
+			search = search.next;
+		}
+		System.out.println("not found");
+	}
+
+	
+	public void length()
+	{
+		Node fullnode = head;
+		int length = 0;
+		while(fullnode!= null)
+		{
+			length++;
+			fullnode = fullnode.next;
+		}
+		System.out.println(length);
+	}
+	
+	
+	public static void main(String[]args)
+	{
+		InsertBeginning list = new InsertBeginning();
+		Node n1 = new Node(10);
+		Node n2 = new Node(20);
+		Node n3 = new Node(30);
+		
+		n1.next = n2;
+		n2.next = n3;
+		list.head = n1;
+		list.tail = n3;
+		
+		list.print();
+		System.out.println();
+		list.insertAtBegining(5);
+		list.print();
+		System.out.println();
+		list.insertAtEnd(25);
+		list.print();
+		System.out.println();
+		list.searchData(20);
+		list.length();
+	}
+	
+	
+	
+}
