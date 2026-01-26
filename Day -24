@@ -1,0 +1,227 @@
+package linkedList;
+
+public class LinkedList1 
+{
+	
+	public static class Node
+	{
+		int data;
+		Node next = null;
+		
+		public Node(int data)
+		{
+			this.data = data;
+		}
+	}
+	
+	Node head = null;
+	Node tail = null;
+	
+	
+	public void insertAtBeginning(int data)
+	{
+		Node newNode = new Node(data);
+		
+		if(head==null)
+		{
+			head=tail=newNode;
+		}
+		else 
+		{
+			newNode.next = head;
+			head = newNode;
+		}	
+	}
+	
+	
+	public void insertAtEnd(int data)
+	{
+		Node newdNode = new Node(data);
+		if(head==null)
+		{
+			head=tail = newdNode;
+		}
+		else 
+		{
+			tail.next = newdNode;
+			tail = newdNode;
+		}
+	}
+	
+	public void insertAtposition(int pos , int data)
+	{
+		if(pos<0)
+		{
+			System.out.println("negative positions doesn;t exist");
+			return;
+		}
+		if(pos==0)
+		{
+			Node newnode = new Node(data);
+			if(head==null)
+			{
+				head=tail=newnode;
+			}
+			else 
+			{
+				newnode.next = head;
+				head = newnode;
+			}
+		}
+		
+		if(head==null)
+		{
+			System.out.println("insertion not possible");
+			return;
+		}
+		
+		
+		Node currentNode = head;
+		Node newnode = new Node(data);
+		int i=0;
+		while(i<(pos-1)&& currentNode!=null)
+		{
+			currentNode = currentNode.next;
+			i++;
+		}
+		
+		if(currentNode==null)
+		{
+			System.out.println("Invalid position");
+			return;
+		}
+		
+		newnode.next = currentNode.next;
+		currentNode.next = newnode;
+
+		if(newnode.next==null)
+		{
+			tail = newnode;
+		}
+		
+		
+	}
+	
+	public void deletebyvalue(int value)
+	{
+		if(head==null)
+		{
+			System.out.println("list is empty");
+			return;
+		}
+		if(head.data==value)
+		{
+			head = head.next;
+			if(head==null)
+			{
+				tail=null;
+				return;
+			}
+		}
+		
+		Node curretNode = head;
+		
+		while(curretNode.next!=null && curretNode.next.data!=value)
+		{
+			curretNode = curretNode.next;
+		}
+		if(curretNode.next==null)
+		{
+			System.out.println("value not found");
+			return;
+		}
+		
+		curretNode.next = curretNode.next.next;
+	}
+	
+	
+	public void print()
+	{
+		if(head==null)
+		{
+			System.out.println("list is empty");
+			return;
+		}
+		Node temp = head;
+		while(temp!=null)
+		{
+			System.out.print(temp.data + " -> ");
+			temp = temp.next;
+		}
+		System.out.println("null");
+	}
+	
+	
+	public void deleteByPosition(int pos)
+	{
+		if(pos<0)
+		{
+			System.out.println("position cannot be negative");
+			return;
+		}
+		if(head==null)
+		{
+			System.out.println("list is empty");
+			return;
+		}
+		if(pos==0)
+		{
+			head=head.next;
+			if(head==null)
+			{
+				tail=null;
+			}
+			return;
+		}
+		
+		
+		Node currentNode = head;
+		int i=0;
+		while(i<(pos-1)&& currentNode.next!=null)
+		{
+			currentNode = currentNode.next;
+			i++;
+		}
+		
+		if(currentNode.next==null)
+		{
+			System.out.println("position doesn't exist");
+			return;
+		}
+		
+		currentNode.next = currentNode.next.next;
+	
+		if(currentNode.next==null)
+		{
+			tail = currentNode;
+		}
+	}
+	
+	
+
+	public static void main(String[] args)
+	{
+		LinkedList1 list = new LinkedList1();
+		Node n1 = new Node(10);
+		Node n2 = new Node(20);
+		Node n3 = new Node(30);
+		
+		n1.next = n2;
+		n2.next = n3;
+		list.head = n1;
+		list.tail = n3;
+		list.print();
+		System.out.println();
+		list.insertAtBeginning(5);
+		list.print();
+		list.insertAtEnd(40);
+		list.print();
+		
+		list.insertAtposition(55, 7);
+		list.print();
+		list.deletebyvalue(45);
+		list.print();
+		
+	}
+
+}
