@@ -1,0 +1,87 @@
+class Solution 
+{
+    public int findShortestSubArray(int[]arr) 
+    {
+        boolean[]newarr = new boolean[arr.length];
+        int maxcount = 0;
+        int minlength = 0;
+        for(int i=0 ; i<arr.length  ; i++)
+        {
+            if(newarr[i])
+            {
+                continue;
+            }
+            int count = 1;
+            int rowindex = i;
+            int columnindex = i;
+            for(int j=i+1 ; j<arr.length ; j++)
+            {
+                if(arr[i]==arr[j])
+                {
+                    count++;
+                    newarr[j]=true;
+                    columnindex = j;
+                }
+            }
+            int length = columnindex - rowindex + 1;
+            if(maxcount<count)
+            {
+                maxcount = count;
+                minlength = length;
+            }
+            if(maxcount==count)
+            {
+                if(length<minlength)
+                {
+                    minlength = length;
+                }
+            }            
+        }
+    return minlength;
+    }
+}
+
+
+
+class Solution 
+{
+    public boolean uniqueOccurrences(int[] arr) 
+    {
+        
+        boolean[]newarr = new boolean[arr.length];
+        int[]frequency = new int[arr.length];
+        int index = 0;
+        for(int i=0 ; i<arr.length ; i++)
+        {
+            if(newarr[i])
+            {
+                continue;
+            }
+            int count = 1;
+            for(int j=i+1 ; j<arr.length ; j++)
+            {
+                if(arr[i]==arr[j])
+                {
+                    count++;
+                    newarr[j] = true;
+                }
+            }
+            frequency[index++]=count;
+            
+         }
+
+         for(int i=0 ; i<index ; i++)
+         {
+            for(int j=i-1 ; j>=0 ; j--)
+            {
+                if(frequency[i]==frequency[j])
+                {
+                    return false;
+                }
+            }
+         }
+
+
+    return true;
+    }
+}
