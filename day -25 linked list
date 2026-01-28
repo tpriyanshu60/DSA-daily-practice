@@ -1,0 +1,43 @@
+  public void sorting()
+    {
+    		if(head==null || head.next==null)
+    		{
+    			return;
+    		}
+    		Node i,j;
+    		for(i=head ; i.next!=null ; i=i.next)
+    		{
+    			boolean flag =false;
+    			for(j=head ; j.next!=null ; j=j.next)
+    			{
+    				if(j.data>j.next.data)
+    				{
+    					int temp = j.data;
+    					j.data = j.next.data;
+    					j.next.data = temp;
+    					flag = true;
+    				}
+    			}
+    			if(flag==false)
+    			{
+    				break;
+    			}
+    		}
+
+    
+    public void reverse() 
+    {
+       Node prev = null;
+       Node currentNode = head;
+       tail= head;
+       
+       while(currentNode!=null)
+       {
+    	   Node n = currentNode.next;
+       currentNode.next = prev;
+       prev = currentNode;
+       currentNode = n; 
+       }     
+       
+       head = prev;
+    }
